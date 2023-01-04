@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg 
+   width="39.119999pt"
+   height="41.040001pt"
+   viewBox="0 0 39.119999 41.040001"
+   version="1.1"
+   id="svg15"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg" content="%3Cmxfile%20host%3D%22www.draw.io%22%20modified%3D%222022-12-29T19%3A25%3A36.753Z%22%20agent%3D%225.0%20(X11)%22%20version%3D%2220.7.4%22%20etag%3D%22kn8d5Tqz2MGMTQEwM-_C%22%3E%3Cdiagram%20id%3D%22bZxzTA7C5nORxhzN8SA9%22%3ErZQ9b4MwEEB%2FDWsEGNpkDU3apVOGzid8gFXDIeMU0l9fE9sBlERppS7I9%2B789XwiYFk9vCpoq3fiKIM45EPAXoI4jjfMfEdwsiBKNhaUSnCHJnAQ3%2Bhg6OhRcOwWhZpIatEuYU5Ng7leMFCK%2BmVZQXK5awslXoFDDvKafgiuK0vXaTjxNxRl5XeOQpepwRc70FXAqZ8htgtYpoi0HdVDhnJ0573Yefs72cvBFDb6NxNiO%2BEL5NHdzZ1Ln%2Fxl%2B0poPLSQj3Fv3jNg20rX0kSRGULXWsWFGNCsunUrotI43D1VdLmr6RGkGrU6mRLfIN6X64%2FEhf0k27uuZp49A%2Fe85WXhyYAZOAm3hbDHQrQS0JRjtH3gptOKPjEjSeo8lYVPa44bkymElDOexFAUYHipgAtjyecaavC%2FnKZLp8nqOb3SmtzQmoSr9M9iTTh18Tk3%2BxWw3Q8%3D%3C%2Fdiagram%3E%3C%2Fmxfile%3E">
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip-0">
+      <path
+         clip-rule="nonzero"
+         d="M 0 0 L 39 0 L 39 39 L 0 39 Z M 0 0 "
+         id="path2" />
+    </clipPath>
+  </defs>
+  <path
+     fill-rule="nonzero"
+     fill="rgb(100%, 100%, 100%)"
+     fill-opacity="1"
+     stroke-width="1"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     stroke="rgb(0%, 0%, 0%)"
+     stroke-opacity="1"
+     stroke-miterlimit="4"
+     d="M 1.002304 1.002304 L 50.997699 1.002304 L 50.997699 50.997699 L 1.002304 50.997699 Z M 1.002304 1.002304 "
+     transform="matrix(0.735849, 0, 0, 0.735849, 0.367925, 0.367925)"
+     id="path7" />
+  <path
+     fill-rule="nonzero"
+     fill="rgb(25.878906%, 68.629456%, 98.039246%)"
+     fill-opacity="1"
+     d="M 4.78125 4.597656 L 34.21875 19.5 L 4.78125 34.402344 Z M 4.78125 4.597656 "
+     id="path9" />
+  <g
+     clip-path="url(#clip-0)"
+     id="g13">
+    <path
+       fill="none"
+       stroke-width="1"
+       stroke-linecap="butt"
+       stroke-linejoin="miter"
+       stroke="#068de9"
+       stroke-opacity="1"
+       stroke-miterlimit="10"
+       d="M 5.997597,5.748097 46.002406,26.000001 5.997597,46.251906 Z m 0,0"
+       transform="matrix(0.735849,0,0,0.735849,0.367925,0.367925)"
+       id="path11" />
+  </g>
+</svg>

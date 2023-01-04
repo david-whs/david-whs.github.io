@@ -1,0 +1,1 @@
+export class Edge{constructor(from,to,capacity,shape,label,labelBackground){this.from=from;this.to=to;this.capacity=capacity;this.flow=0;this.shape=shape;this.label=label;this.labelBackground=labelBackground}remainingCapacity(){return this.capacity-this.flow}hasRemainingCapacity(){return this.remainingCapacity()>0}addFlow(flow){this.flow+=flow}}

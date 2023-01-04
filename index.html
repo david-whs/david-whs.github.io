@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Maximale Flüsse</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<link rel="stylesheet" href="styles.css">
+
+		<script src="dist/pixi.min.js"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- #region Title-->
+				<section>
+					<h3>Maximale Flüsse in einem Graphen</h3>
+					<p>
+						<small>Seminarthema 10 präsentiert von <a href="#">David Ruitter</a></small>
+					</p>
+				</section>
+				<!-- #endregion Title-->
+
+				<!-- #region Begriffe-->
+				<section data-auto-animate>
+					<h3>Flussnetzwerk</h3>
+					<object id="flownetwork-1"
+						data="./assets/flussnetzwerk-1.svg"
+						type="image/svg+xml"
+						data-id="flownetwork"
+						class="flownetwork"
+						width="800">
+					</object>
+				</section>
+				<section data-auto-animate>
+					<h3>Quelle</h3>
+					<object id="flownetwork-2"
+						data="./assets/flussnetzwerk-2.svg"
+						type="image/svg+xml"
+						data-id="flownetwork"
+						class="flownetwork"
+						width="800">
+					</object>
+				</section>
+				<section data-auto-animate>
+					<h3>Ziel</h3>
+					<object id="flownetwork-3"
+						data="./assets/flussnetzwerk-3.svg"
+						type="image/svg+xml"
+						data-id="flownetwork"
+						class="flownetwork"
+						width="800">
+					</object>
+				</section>
+				<section data-auto-animate>
+					<h3>Alle Knoten benennen</h3>
+					<object id="flownetwork-4"
+						data="./assets/flussnetzwerk-4.svg"
+						type="image/svg+xml"
+						data-id="flownetwork"
+						class="flownetwork"
+						width="800">
+					</object>
+				</section>
+				<section data-auto-animate>
+					<h3>Kapazitäten</h3>
+					<object id="flownetwork-5"
+						data="./assets/flussnetzwerk-5.svg"
+						type="image/svg+xml"
+						data-id="flownetwork"
+						class="flownetwork"
+						width="800">
+					</object>
+				</section>
+				<section data-auto-animate>
+					<h3>Fluss</h3>
+					<object id="flownetwork-6"
+						data="./assets/flussnetzwerk-6.svg"
+						type="image/svg+xml"
+						data-id="flownetwork"
+						class="flownetwork"
+						width="800">
+					</object>
+				</section>
+				<section>
+					<section data-auto-animate>
+						<h3>Augmentierender Pfad</h3>
+						<object id="flownetwork-7"
+							data="./assets/flussnetzwerk-6.svg"
+							type="image/svg+xml"
+							data-id="flownetwork"
+							class="flownetwork"
+							width="800">
+						</object>
+						<h4 id="flownetwork-7-path">Q</h>
+					</section>
+					<section>
+						<h3>Verbleibende Kapazität einer Kante</h3>
+						<p>
+							=
+						</p>
+						<p>
+							Kapazität - Fluss
+						</p>
+					</section>
+				</section>
+
+				<!-- #endregion Begriffe-->	
+
+				<!-- #region Ford-Fulkerson-->
+				<section>
+					<h3>Ford-Fulkerson Verfahren</h3>
+					<p>
+						<span class="fragment">
+							Solange es noch augmentierende Pfade gibt
+						</span>
+						<ol style="font-size: 1.5rem;">
+							<li class="fragment">
+								Wähle augmentierenden Pfad aus
+							</li>
+							<li class="fragment">
+								Finde die geringste verbleibende Kapazität im augmentierenden Pfad (Bottleneck)
+							</li>
+							<li class="fragment">
+								Erhöhe den Fluss aller Kanten um den Wert des Bottlenecks
+							</li>
+							<li class="fragment">
+								Füge den Wert des Bottlenecks zum Gesamtfluss hinzu
+							</li>
+						</ol>
+					</p>
+					<div style="font-size: 10px;" class="fragment">
+						Title: Pseudocode Ford Fulkerson Verfahren,
+						Attribution: abgeändert nach Saake und Sattler 2006 vgl. Algorithmen und Datenstrukturen Eine Einführung mit Java
+					</div>
+				</section>
+				<section>
+					<h3>Kein Algorithmus, da</h3>
+					<div class="fragment">
+						<small >Nicht vorgegeben wird, mit welchem Suchverfahren der augmentierende Pfad zu suchen ist</small>
+
+						<div style="font-size: 10px;">
+							Source: Algorithmen und Datenstrukturen Eine Einführung mit Java Saake und Sattler 2006 vgl. S. 456<br>
+							Sedgewick, R. und Wayne, K. (2014). Algorithmen Algorithmen und Datenstrukturen. Pearson Deutschland GmbH, München, vierte. Auflage. vgl. S. 938
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Edmonds-Karp Algorithmus</h3>
+					<div class="fragment">
+						<small>Ford-Fulkerson mit Breitensuche als Suchverfahren</small>
+
+						<div style="font-size: 10px;">
+							Source: 
+							Sedgewick, R. und Wayne, K. (2014). Algorithmen Algorithmen und Datenstrukturen. Pearson Deutschland GmbH, München, vierte. Auflage. vgl. S. 941
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>Breitensuche</h3>
+					<object id="bfs-1"
+						data="./assets/flussnetzwerk-6.svg"
+						type="image/svg+xml"
+						data-id="bfs"
+						class="flownetwork"
+						width="800">
+					</object>
+				</section>
+				<section data-auto-animate>
+					<h3>Breitensuche</h3>
+					<div style="display: flex;">
+						<div id="bfs-demo">
+							<object id="bfs-2"
+								data="./assets/breitensuche-2.svg"
+								type="image/svg+xml"
+								data-id="bfs"
+								class="flownetwork"
+								width="800">
+							</object>
+						</div>
+						<div id="queue" class="var-container">
+							<span class="var-name">Queue</span>
+							<div class="queue-element">
+								Q
+							</div>
+						</div>
+						<div id="discovered" class="var-container">
+							<span class="var-name">Explored</span>
+							<div class="queue-element">
+								Q
+							</div>
+						</div>
+					</div>
+					<div>
+						<!-- <button id="previousBFSAnimationButton">
+							&lt;
+						</button> -->
+						<button id="nextBFSAnimationButton">
+							Nächster Knoten in der Queue &gt;
+						</button>
+					</div>
+					<div style="font-size: 10px; margin-top: 20px;">
+						Source: Sedgewick, R. und Wayne, K. (2014). Algorithmen Algorithmen und Datenstrukturen. Pearson Deutschland GmbH, München, vierte. Auflage, vgl. S. 577 f.
+					</div>
+				</section>
+
+				<section>
+					<h3>Laufzeitkomplexität</h3>
+					<p>O(|V ||E|²)</p>
+					<div style="font-size: 10px;">
+						Cormen, T. H., Leiserson, C. E., und Ronald L. Rivest, C. S. (2003). 
+						Introduction to Algorithms. The MIT Press, Cambridge, Massachusetts, zweite Auflage. vgl. S. 661
+					</div>
+				</section>
+				<!-- #endregion Ford-Fulkerson-->
+				
+				<section>
+					<h3>Implementierung in Java</h3>
+					<img src="./assets/packages.png" alt="Java Klassen">
+				</section>
+
+				<section>
+					<h3>Implementierung in Java</h3>
+					<pre>
+						<code data-trim data-noescape>
+							public static int maxFlow(Flownetwork flownetwork) {
+								List<Edge> pathToSink;
+								int totalFlow = 0;
+								while(!(pathToSink = flownetwork.getAugmentingPath())
+									.isEmpty()) {
+									// Erhöhen des totalFlows um path Bottleneck
+									...
+								}
+						
+								return totalFlow;
+							}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Implementierung in Java</h3>
+					<pre>
+						<code data-trim data-noescape>
+							public List<Edge> getAugmentingPath() {
+								var queue = new ArrayDeque<Vertex>();
+								var explored = new HashSet<String>();
+								// Key is the child vertex and value the parent of the child
+								var childParent = new HashMap<Vertex, Vertex>();
+								
+								queue.offer(source);
+								explored.add(source.getLabel());
+								
+								while(!queue.isEmpty()) {
+									Vertex currentVertex = queue.poll();
+									
+									// Pfad rekonstruieren sobald gefunden
+									...
+
+									Collection<Edge> edgesFromCurrentVertex = currentVertex.getEdges();
+									for (Edge edge : edgesFromCurrentVertex)
+										if (edge.hasRemainingCapacity() &&
+											!explored.contains(edge.to().getLabel())) {
+											queue.push(edge.to());
+											explored.add(edge.to().getLabel());
+											childParent.put(edge.to(), edge.from());
+										}			
+								}
+								
+								return List.of();
+							}
+						
+						</code>
+					</pre>
+				</section>
+
+				<!-- #region Visualisierung-->
+				<section>
+					<h3>Visualisierung</h3>
+					<div style="display: flex;">
+						<div id="app">
+						</div>
+						<div id="appButtons">
+						</div>
+					</div>
+					<div id="appStats">
+						<div style="display: flex; align-items: flex-start;">
+							<small>
+								Gesamtfluss:&nbsp;
+							</small>
+							<small id="totalFlow">
+								0
+							</small>
+						</div>
+						<div style="display: flex; align-items: flex-start;">
+							<small>
+								Maximal möglicher Fluss:&nbsp;
+							</small>
+							<small id="maxPossibleFlow">
+								0
+							</small>
+						</div>
+					</div>
+				</section>
+				<!-- #endregion Visualisierung-->
+			</div>
+		</div>
+
+		<!-- #region Revealjs-->
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+		<!-- #endregion Revealjs-->
+		<script type="module" src="./js/maxFlow.js"></script>
+		<script src="./js/presentation.js"></script>
+	</body>
+</html>

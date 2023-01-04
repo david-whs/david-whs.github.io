@@ -1,0 +1,1 @@
+const RIGHTCLICK=2;const MODES={ADD_NODE:'add_node',ADD_EDGE:'add_edge',MOVE:'move'};const TEXTSTYLE=new PIXI.TextStyle({fontFamily:'Helvetica',fontWeight:300,fontSize:40});export{RIGHTCLICK,MODES,TEXTSTYLE};

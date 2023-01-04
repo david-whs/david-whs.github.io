@@ -1,0 +1,1 @@
+export class Vertex{constructor(id,label,shape,x,y){this.id=id;this.label=label;this.shape=shape;this.edges=[];this.x=x;this.y=y}getEdge(to){return this.edges.find((edge)=>edge.to===to)}}
